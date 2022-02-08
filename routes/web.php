@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/upload', function(){
-    return view('upload');
-});
+Route::get('/upload', [UploadController::class, 'index']);
+
+Route::post('/upload', [UploadController::class, 'upload']);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
