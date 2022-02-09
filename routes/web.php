@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\SemesterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,16 +15,21 @@ use App\Http\Controllers\UploadController;
 |
 */
 
-Route::get('/upload', [UploadController::class, 'index']);
+Route::get('/upload/{id}', [UploadController::class, 'index']);
 
 Route::post('/upload', [UploadController::class, 'upload']);
+
+// Route::Resource('/semesters', SemesterController::class);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/', [SemesterController::class, 'index'])->middleware(['auth'])->name('dashboard');
+
+Route::post('/add-semester', [SemesterController::class, 'store']);
+
+Route::get('/delete-semester/{id}', [SemesterController::class, 'destroy']);
+
 
 require __DIR__.'/auth.php';
