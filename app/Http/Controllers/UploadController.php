@@ -3,14 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\StudentImport;
 
 class UploadController extends Controller
 {
-    function index(){
-        return view('upload');
+    function index($id)
+    {
+        return view('upload', ['id' => $id]);
     }
 
-    function upload(Request $request){
-        dd($request->file);
+    function upload(Request $request, $id)
+    {
+        $file = $request->file;
+        Excel::import(new StudentImport($id), "C:\Users\hasan\Desktop\\" . $file);
+        dd("C:\Users\hasan\Desktop\\" . $file);
     }
 }

@@ -17,7 +17,7 @@ use App\Http\Controllers\SemesterController;
 
 Route::get('/upload/{id}', [UploadController::class, 'index']);
 
-Route::post('/upload', [UploadController::class, 'upload']);
+Route::post('/upload/{id}', [UploadController::class, 'upload']);
 
 // Route::Resource('/semesters', SemesterController::class);
 
