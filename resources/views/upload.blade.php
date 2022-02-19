@@ -29,4 +29,17 @@
             </div>
         </div>
     </form>
+    <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none ' href="/">
+        <button id="fab"
+            class="text-white content-center cursor-pointer fixed bottom-5 left-4 p-0 w-32 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
+            Go Back
+        </button>
+    </a>
+    <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none ' href="/data/{{$id}}">
+        <button id="fab"
+            class="text-white cursor-pointer fixed bottom-5 right-4 p-0 w-32 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
+            View Data
+        </button>
+    </a>
+
 </x-app-layout>

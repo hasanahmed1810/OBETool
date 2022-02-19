@@ -16,7 +16,7 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link href="/admin" >
-                        {{ __('Admin Panel') }}
+                        {{ __('Editor') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link href="/admin" >
-                {{ __('Admin Panel') }}
+                {{ __('Editor') }}
             </x-responsive-nav-link>
         </div>
 

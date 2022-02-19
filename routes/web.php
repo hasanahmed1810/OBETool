@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\SemesterController;
+use App\Http\Controllers\DataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ Route::get('/upload/{id}', [UploadController::class, 'index']);
 
 Route::post('/upload/{id}', [UploadController::class, 'upload']);
 
+Route::get('/data/{id}', [DataController::class, 'index']);
+
 // Route::Resource('/semesters', SemesterController::class);
 
 Route::group(['prefix' => 'admin'], function () {
@@ -30,6 +33,5 @@ Route::get('/', [SemesterController::class, 'index'])->middleware(['auth'])->nam
 Route::post('/add-semester', [SemesterController::class, 'store']);
 
 Route::get('/delete-semester/{id}', [SemesterController::class, 'destroy']);
-
 
 require __DIR__.'/auth.php';
