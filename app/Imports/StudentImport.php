@@ -23,7 +23,7 @@ class StudentImport implements ToCollection, WithHeadingRow
         foreach ($rows as $index => $row) 
         {
             Student::create([
-                    'semester_id' => $this->id,
+                    'subject_id' => $this->id,
                     'cms_id' => $row['cms_id'],
                     'name' => $row['name'],
                     'clo1' => $row['clo1score'],

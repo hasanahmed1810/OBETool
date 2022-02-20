@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Semester;
+use App\Models\Subject;
+use App\Models\Student;
+
 
 class SemesterController extends Controller
 {
@@ -84,7 +87,11 @@ class SemesterController extends Controller
      */
     public function destroy($id)
     {
-        // echo '<script>confirm("Are you sure?");</script>';
+        $subjects = Subject::where('semester_id', $id)->get();
+        foreach ($subjects as $subject) {
+            Student::where('subject_id', $subject->id)->delete();
+        }
+        Subject::where('semester_id', $id)->delete();
         Semester::destroy($id);
         return redirect('/');
     }

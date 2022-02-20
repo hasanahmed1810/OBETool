@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {
-    public function index($id)
+    public function index($sem_id, $id)
     {
-        return view('report', ['id' => $id]);
+        return view('report', ['sem_id' => $sem_id, 'id' => $id]);
     }
 }

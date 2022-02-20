@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="flex justify-center items-center py-8">
+    <div class="flex justify-center items-center py-10">
         <form class="w-full max-w-xs flex flex-col bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
             <label for="clo1">Map CLO1 To</label>
             <br>
@@ -81,7 +81,7 @@
         </div>
     </div>
 
-    <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none ' href="/data/{{$id}}">
+    <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none ' href="/data/{{$sem_id}}/{{$id}}">
         <button type="button" id="fab"
             class="text-white content-center cursor-pointer fixed bottom-5 left-4 p-0 w-32 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
             Go Back

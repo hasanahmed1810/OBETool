@@ -1,13 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Semesters') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
 
-        @if($semesters->count() <= 0) <div class="flex max-w-7xl px-8">
+            @if($semesters->count() <= 0) <div class="flex max-w-7xl px-8">
             <div class="w-full bg-white overflow-hidden shadow-sm rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     No semesters created yet
@@ -19,7 +19,7 @@
 
             <div class="flex cursor-pointer transition ease-in-out delay-15 hover:-translate-y-1 max-w-7xl px-8">
                 <div class="w-11/12 mr-4 bg-white overflow-hidden shadow-sm rounded-lg">
-                    <a href="/upload/{{$semester['id']}}">
+                    <a href="/subjects/{{$semester['id']}}">
                         <div class="p-6 bg-white border-b border-gray-200">
                             {{$semester['name']}}
                         </div>

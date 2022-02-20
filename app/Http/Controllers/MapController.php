@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class MapController extends Controller
 {
-    public function index($id)
+    public function index($sem_id, $id)
     {
-        return view('map', ['id' => $id]);
+        return view('map', ['sem_id' => $sem_id, 'id' => $id]);
     }
 }

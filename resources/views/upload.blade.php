@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <form action="/upload/{{$id}}" method="post" enctype="multipart/form">
+    <form action="/upload/{{$sem_id}}/{{$id}}" method="post" enctype="multipart/form">
         <div class="flex flex-col w-full h-96 items-center justify-center bg-grey-lighter">
             <label
                 class="transition ease-in-out delay-15 hover:-translate-y-1 w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer">
@@ -29,13 +29,13 @@
             </div>
         </div>
     </form>
-    <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none ' href="/">
+    <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none ' href="/subjects/{{$sem_id}}">
         <button id="fab"
             class="text-white content-center cursor-pointer fixed bottom-5 left-4 p-0 w-32 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
             Go Back
         </button>
     </a>
-    <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none ' href="/data/{{$id}}">
+    <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none ' href="/data/{{$sem_id}}/{{$id}}">
         <button id="fab"
             class="text-white cursor-pointer fixed bottom-5 right-4 p-0 w-32 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
             View Data

@@ -6,6 +6,8 @@ use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\SubjectController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,15 +19,17 @@ use App\Http\Controllers\ReportController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/map-plos/{id}', [MapController::class, 'index']);
+Route::get('/map-plos/{sem_id}/{id}', [MapController::class, 'index']);
 
-Route::get('/upload/{id}', [UploadController::class, 'index']);
+Route::get('/upload/{sem_id}/{id}', [UploadController::class, 'index']);
 
-Route::post('/upload/{id}', [UploadController::class, 'upload']);
+Route::post('/upload/{sem_id}/{id}', [UploadController::class, 'upload']);
 
-Route::get('/data/{id}', [DataController::class, 'index']);
+Route::get('/subjects/{id}', [SubjectController::class, 'index']);
 
-Route::get('/report/{id}', [ReportController::class, 'index']);
+Route::get('/data/{sem_id}/{id}', [DataController::class, 'index']);
+
+Route::get('/report/{sem_id}/{id}', [ReportController::class, 'index']);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
@@ -35,6 +39,10 @@ Route::get('/', [SemesterController::class, 'index'])->middleware(['auth'])->nam
 
 Route::post('/add-semester', [SemesterController::class, 'store']);
 
+Route::post('/add-subject/{id}', [SubjectController::class, 'store']);
+
 Route::get('/delete-semester/{id}', [SemesterController::class, 'destroy']);
+
+Route::get('/delete-subject/{sem_id}/{id}', [SubjectController::class, 'destroy']);
 
 require __DIR__.'/auth.php';
