@@ -26,7 +26,6 @@ class StudentImport implements ToCollection, WithHeadingRow
                     'semester_id' => $this->id,
                     'cms_id' => $row['cms_id'],
                     'name' => $row['name'],
-                    'subject' => $row['subject'],
                     'clo1' => $row['clo1score'],
                     'clo2' => $row['clo2score'],
                     'clo3' => $row['clo3score'],

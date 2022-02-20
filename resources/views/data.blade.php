@@ -23,10 +23,6 @@
                                     </th>
                                     <th scope="col"
                                         class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                                        Subject
-                                    </th>
-                                    <th scope="col"
-                                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
                                         CLO 1 Score
                                     </th>
                                     <th scope="col"
@@ -55,9 +51,6 @@
                                         class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {{$student['name']}}
                                     </td>
-                                    <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                        {{$student['subject']}}
-                                    </td>
                                     <td class="py-4 px-6 text-sm text-teal-400 whitespace-nowrap dark:text-gray-400">
                                         {{$student['clo1']}}
 
@@ -72,7 +65,6 @@
                                     </td>
                                     <td class="py-4 px-6 text-sm text-teal-400 whitespace-nowrap dark:text-gray-400">
                                         {{$student['clo4']}}
-
                                     </td>
                                 </tr>
                                 @endforeach
