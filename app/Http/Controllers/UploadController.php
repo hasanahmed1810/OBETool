@@ -17,6 +17,6 @@ class UploadController extends Controller
     {
         $file = $request->file;
         Excel::import(new StudentImport($id), "C:\Users\hasan\Desktop\\" . $file);
-        dd("C:\Users\hasan\Desktop\\" . $file);
+        return redirect('/data'.'/'.$id);
     }
 }

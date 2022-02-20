@@ -18,13 +18,13 @@
                 @csrf
                 <div class="flex justify-center">
                     <div>
-                        <input accept=".csv,.xlsx" class="hidden" id="file" name="file" type="file">
+                        <input required accept=".csv,.xlsx" class="hidden" id="file" name="file" type="file">
                     </div>
                 </div>
             </label>
             <div class='flex w-full h-24 items-center justify-center bg-grey-lighter'>
                 <button
-                    class='transition ease-in-out delay-15 hover:-translate-y-1 w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer'
+                    class='transition ease-in-out delay-15 hover:-translate-y-1 w-64 flex flex-col items-center px-4 py-6 bg-white text-teal-500 rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer'
                     type="submit">UPLOAD</button>
             </div>
         </div>

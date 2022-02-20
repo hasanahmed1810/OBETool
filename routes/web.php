@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\MapController;
+use App\Http\Controllers\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,7 @@ use App\Http\Controllers\DataController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/map-plos/{id}', [MapController::class, 'index']);
 
 Route::get('/upload/{id}', [UploadController::class, 'index']);
 
@@ -22,7 +25,7 @@ Route::post('/upload/{id}', [UploadController::class, 'upload']);
 
 Route::get('/data/{id}', [DataController::class, 'index']);
 
-// Route::Resource('/semesters', SemesterController::class);
+Route::get('/report/{id}', [ReportController::class, 'index']);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
