@@ -11,7 +11,7 @@
         </h2>
     </x-slot>
 
-    <form action="/upload/{{$sem_id}}/{{$id}}" method="post" enctype="multipart/form">
+    <form action="/upload/{{$sem_id}}/{{$id}}" method="post" enctype="multipart/form-data">
         <div class="flex flex-col w-full h-96 items-center justify-center bg-grey-lighter">
             <label
                 class="transition ease-in-out delay-15 hover:-translate-y-1 w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer">

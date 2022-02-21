@@ -16,7 +16,7 @@ class UploadController extends Controller
 
     function upload(Request $request, $sem_id, $id)
     {
-        Excel::import(new StudentImport($id), "C:\Users\hasan\Desktop\\" . $request->file);
+        Excel::import(new StudentImport($id), $request->file('file'));
         return redirect('/data'.'/'.$sem_id.'/'.$id);
     }
 
