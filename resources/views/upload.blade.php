@@ -1,3 +1,9 @@
+<style>
+    .center-button {
+       left: 40%; 
+    }
+</style>
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -29,13 +35,23 @@
             </div>
         </div>
     </form>
+
     <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none ' href="/subjects/{{$sem_id}}">
         <button id="fab"
             class="text-white content-center cursor-pointer fixed bottom-5 left-4 p-0 w-32 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
             Go Back
         </button>
     </a>
-    <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none ' href="/data/{{$sem_id}}/{{$id}}">
+
+    <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none ' href="/download-template">
+        <button id="fab"
+            class="text-white cursor-pointer center-button fixed bottom-5 p-0 w-64 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
+            Download Template
+        </button>
+    </a>
+
+    <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none '
+        href="/data/{{$sem_id}}/{{$id}}">
         <button id="fab"
             class="text-white cursor-pointer fixed bottom-5 right-4 p-0 w-32 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
             View Data

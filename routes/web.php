@@ -45,4 +45,6 @@ Route::get('/delete-semester/{id}', [SemesterController::class, 'destroy']);
 
 Route::get('/delete-subject/{sem_id}/{id}', [SubjectController::class, 'destroy']);
 
+Route::get('/download-template', [UploadController::class, 'download']);
+
 require __DIR__.'/auth.php';

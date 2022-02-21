@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\StudentImport;
+use Illuminate\Support\Facades\Storage;
 
 class UploadController extends Controller
 {
@@ -15,8 +16,11 @@ class UploadController extends Controller
 
     function upload(Request $request, $sem_id, $id)
     {
-        $file = $request->file;
-        Excel::import(new StudentImport($id), "C:\Users\hasan\Desktop\\" . $file);
+        Excel::import(new StudentImport($id), "C:\Users\hasan\Desktop\\" . $request->file);
         return redirect('/data'.'/'.$sem_id.'/'.$id);
+    }
+
+    function download(){
+        return Storage::download('public/template.xlsx');
     }
 }
