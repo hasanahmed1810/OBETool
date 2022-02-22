@@ -1,10 +1,17 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="text-teal-500 font-semibold text-xl leading-tight">
             {{ __('Student Data') }}
         </h2>
     </x-slot>
 
+    @if($students->count() <= 0) <div class="flex max-w-7xl px-8 py-12">
+        <div class="w-full bg-white overflow-hidden shadow-sm rounded-lg">
+            <div class="p-6 bg-white border-b border-gray-200">
+                No students added yet
+            </div>
+        </div>
+    @else
     <div class="px-8 py-8">
         <div class="flex flex-col">
             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -51,19 +58,19 @@
                                         class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {{$student['name']}}
                                     </td>
-                                    <td class="py-4 px-6 text-sm text-teal-400 whitespace-nowrap dark:text-gray-400">
+                                    <td class="py-4 px-6 text-sm {{ ($student['clo1'] >= 50) ? 'text-teal-500' : 'text-red-500' }} whitespace-nowrap dark:text-gray-400">
                                         {{$student['clo1']}}
 
                                     </td>
-                                    <td class="py-4 px-6 text-sm text-teal-400 whitespace-nowrap dark:text-gray-400">
+                                    <td class="py-4 px-6 text-sm {{ ($student['clo2'] >= 50) ? 'text-teal-500' : 'text-red-500' }} whitespace-nowrap dark:text-gray-400">
                                         {{$student['clo2']}}
 
                                     </td>
-                                    <td class="py-4 px-6 text-sm text-teal-400 whitespace-nowrap dark:text-gray-400">
+                                    <td class="py-4 px-6 text-sm {{ ($student['clo3'] >= 50) ? 'text-teal-500' : 'text-red-500' }} whitespace-nowrap dark:text-gray-400">
                                         {{$student['clo3']}}
 
                                     </td>
-                                    <td class="py-4 px-6 text-sm text-teal-400 whitespace-nowrap dark:text-gray-400">
+                                    <td class="py-4 px-6 text-sm {{ ($student['clo4'] >= 50) ? 'text-teal-500' : 'text-red-500' }} whitespace-nowrap dark:text-gray-400">
                                         {{$student['clo4']}}
                                     </td>
                                 </tr>
@@ -74,8 +81,8 @@
                 </div>
             </div>
         </div>
-
     </div>
+    @endif
 
     <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none ' href="/upload/{{$sem_id}}/{{$id}}">
         <button id="fab"
@@ -90,5 +97,7 @@
             Map PLOs
         </button>
     </a>
+
+    <br><br><br>
 
 </x-app-layout>

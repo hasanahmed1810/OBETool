@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="text-teal-500 font-semibold text-xl  leading-tight">
             {{ __('Semesters') }}
         </h2>
     </x-slot>
@@ -48,7 +48,7 @@
     </div>
 
 
-    <form method="post" action='/add-semester' id="add" class="hidden w-full max-w-sm">
+    <form autocomplete="off" method="post" action='/add-semester' id="add" class="hidden w-full max-w-sm">
         <div class="mr-4 fixed bottom-5 right-20 flex items-center border-b border-teal-500 py-2">
             @csrf
             <input name='name' id="name"
@@ -71,6 +71,7 @@
                                     C15.952,9,16,9.447,16,10z" />
         </svg>
     </button>
+    <br>
 
 </x-app-layout>
 
