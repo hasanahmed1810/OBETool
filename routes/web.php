@@ -31,7 +31,7 @@ Route::get('/data/{sem_id}/{id}', [DataController::class, 'index']);
 
 Route::post('/report/{sem_id}/{id}', [ReportController::class, 'index']);
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'editor'], function () {
     Voyager::routes();
 });
 
@@ -39,11 +39,15 @@ Route::get('/', [SemesterController::class, 'index'])->middleware(['auth'])->nam
 
 Route::post('/add-semester', [SemesterController::class, 'store']);
 
+Route::post('/add-student/{subj_id}', [DataController::class, 'store']);
+
 Route::post('/add-subject/{id}', [SubjectController::class, 'store']);
 
 Route::get('/delete-semester/{id}', [SemesterController::class, 'destroy']);
 
 Route::get('/delete-subject/{sem_id}/{id}', [SubjectController::class, 'destroy']);
+
+Route::get('/delete-student/{id}', [DataController::class, 'destroy']);
 
 Route::get('/download-template', [UploadController::class, 'download']);
 

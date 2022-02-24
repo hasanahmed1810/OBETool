@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-teal-500 font-semibold text-xl  leading-tight">
-            {{ __('Semesters') }}
+            {{ __('Dashboard') }}
         </h2>
     </x-slot>
 
@@ -52,10 +52,10 @@
         <div class="mr-4 fixed bottom-5 right-20 flex items-center border-b border-teal-500 py-2">
             @csrf
             <input name='name' id="name"
-                class="rounded-md bg-transparent  border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight"
+                class="transition ease-in-out rounded-md bg-transparent  border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight"
                 type="text" placeholder="Semester" aria-label="Full name">
             <button
-                class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 ease in text-sm border-4 text-white py-1 px-10 rounded-md"
+                class="flex-shrink-0 transition ease-in-out bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 ease in text-sm border-4 text-white py-1 px-10 rounded-md"
                 type="submit">
                 Add
             </button>

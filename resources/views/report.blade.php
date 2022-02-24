@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-teal-500 font-semibold text-xl leading-tight">
-            {{ __('PLO Report') }}
+            {{ __('PLO Report for '.$semester_name." ".$subject_name) }}
         </h2>
     </x-slot>
 
@@ -18,30 +18,30 @@
                 <div class="inline-block py-2 min-w-full sm:px-6 lg:px-8">
                     <div class="overflow-hidden shadow-md sm:rounded-lg">
                         <table class="min-w-full">
-                            <thead class="bg-gray-50 dark:bg-gray-700">
+                            <thead class="bg-gray-100 dark:bg-gray-700">
                                 <tr>
                                     <th scope="col"
-                                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                        class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
                                         CMS ID
                                     </th>
                                     <th scope="col"
-                                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                        class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
                                         Name
                                     </th>
                                     <th scope="col"
-                                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                        class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
                                         {{$column1}} Score
                                     </th>
                                     <th scope="col"
-                                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                        class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
                                         {{$column2}} Score
                                     </th>
                                     <th scope="col"
-                                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                        class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
                                         {{$column3}} Score
                                     </th>
                                     <th scope="col"
-                                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                        class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
                                         {{$column4}} Score
                                     </th>
                                 </tr>
@@ -49,7 +49,7 @@
                             <tbody>
 
                                 @foreach ($students as $student)
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <tr class="odd:bg-white even:bg-gray-100 bg-white dark:bg-gray-800 dark:border-gray-700">
                                     <td
                                         class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {{$student['cms_id']}}

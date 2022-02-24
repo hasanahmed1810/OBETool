@@ -11,7 +11,7 @@
             @csrf
             <label for="clo1">Map CLO 1 To</label>
             <br>
-            <select class=' appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
+            <select class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
                 name="clo1" id="clo1">
                 <option value="PLO 1">PLO 1</option>
                 <option value="PLO 2">PLO 2</option>
@@ -29,7 +29,7 @@
             <br>
             <label for="clo2">Map CLO 2 To</label>
             <br>
-            <select class=' appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
+            <select class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
                 name="clo2" id="clo2">
                 <option value="PLO 1">PLO 1</option>
                 <option value="PLO 2">PLO 2</option>
@@ -47,7 +47,7 @@
             <br>
             <label for="clo3">Map CLO 3 To</label>
             <br>
-            <select class=' appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
+            <select class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
                 name="clo3" id="clo3">
                 <option value="PLO 1">PLO 1</option>
                 <option value="PLO 2">PLO 2</option>
@@ -65,7 +65,7 @@
             <br>
             <label for="clo4">Map CLO 4 To</label>
             <br>
-            <select class=' appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
+            <select class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
                 name="clo4" id="clo4">
                 <option value="PLO 1">PLO 1</option>
                 <option value="PLO 2">PLO 2</option>
