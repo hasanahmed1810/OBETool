@@ -7,7 +7,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-teal-500 font-semibold text-xl leading-tight">
-            {{ __($semester_name." ".$subject_name) }}
+            {{ "CLO Scores For ".__($semester_name." ".$subject_name) }}
         </h2>
     </x-slot>
 
@@ -22,10 +22,33 @@
             <div class="flex flex-col">
                 <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="inline-block py-2 min-w-full sm:px-6 lg:px-8">
+                        <div id="chart" style="height: 300px"></div>
                         <div class="overflow-hidden shadow-md sm:rounded-lg">
                             <table class="min-w-full">
                                 <thead class="bg-gray-100 dark:bg-gray-700">
                                     <tr>
+                                        <th colspan='2' scope="col"
+                                            class="text-center py-3 px-6 text-sm font-medium tracking-wider text-gray-700 uppercase dark:text-gray-400">
+                                            KPI%
+                                        </th>
+                                        <th scope="col"
+                                            class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                            40%
+                                        </th>
+                                        <th scope="col"
+                                            class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                            40%
+                                        </th>
+                                        <th scope="col"
+                                            class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                            40%
+                                        </th>
+                                        <th scope="col"
+                                            class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                            40%
+                                        </th>
+                                    </tr>
+                                    <tr class="bg-white">
                                         <th scope="col"
                                             class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
                                             CMS ID
@@ -57,9 +80,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
                                     @foreach ($students as $student)
-                                    <tr class="odd:bg-white even:bg-gray-100 bg-white dark:bg-gray-800 ">
+                                    <tr class="even:bg-white odd:bg-gray-100 bg-white dark:bg-gray-800 ">
                                         <td
                                             class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                             {{$student['cms_id']}}
@@ -69,22 +91,22 @@
                                             {{$student['name']}}
                                         </td>
                                         <td
-                                            class="py-4 px-6 text-sm {{ ($student['clo1'] >= 50) ? 'text-teal-500' : 'text-red-500' }} whitespace-nowrap dark:text-gray-400">
+                                            class="py-4 px-6 text-sm {{ ($student['clo1'] >= 40) ? 'text-teal-500' : 'text-red-500' }} whitespace-nowrap dark:text-gray-400">
                                             {{$student['clo1']}}
 
                                         </td>
                                         <td
-                                            class="py-4 px-6 text-sm {{ ($student['clo2'] >= 50) ? 'text-teal-500' : 'text-red-500' }} whitespace-nowrap dark:text-gray-400">
+                                            class="py-4 px-6 text-sm {{ ($student['clo2'] >= 40) ? 'text-teal-500' : 'text-red-500' }} whitespace-nowrap dark:text-gray-400">
                                             {{$student['clo2']}}
 
                                         </td>
                                         <td
-                                            class="py-4 px-6 text-sm {{ ($student['clo3'] >= 50) ? 'text-teal-500' : 'text-red-500' }} whitespace-nowrap dark:text-gray-400">
+                                            class="py-4 px-6 text-sm {{ ($student['clo3'] >= 40) ? 'text-teal-500' : 'text-red-500' }} whitespace-nowrap dark:text-gray-400">
                                             {{$student['clo3']}}
 
                                         </td>
                                         <td
-                                            class="py-4 px-6 text-sm {{ ($student['clo4'] >= 50) ? 'text-teal-500' : 'text-red-500' }} whitespace-nowrap dark:text-gray-400">
+                                            class="py-4 px-6 text-sm {{ ($student['clo4'] >= 40) ? 'text-teal-500' : 'text-red-500' }} whitespace-nowrap dark:text-gray-400">
                                             {{$student['clo4']}}
                                         </td>
                                         <td
@@ -174,3 +196,22 @@
         <br><br><br>
 
 </x-app-layout>
+
+<!-- Charting library -->
+<script src="https://unpkg.com/chart.js@^2.9.3/dist/Chart.min.js"></script>
+<!-- Chartisan -->
+<script src="https://unpkg.com/@chartisan/chartjs@^2.1.0/dist/chartisan_chartjs.umd.js"></script>
+
+<script>
+    const chart = new Chartisan({
+        el: '#chart',
+        url: "@chart('clo_attainment_chart')",
+        hooks: new ChartisanHooks()
+        .title('CLO Attainment Graph')
+        .colors(['#EF4444','#14B8A6'])
+        .borderColors(['#EF4444','#14B8A6'])
+        .beginAtZero()
+        .responsive(true)
+        .datasets([{ type: 'line', fill: false }, 'bar']),
+      });
+</script>

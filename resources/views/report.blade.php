@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-teal-500 font-semibold text-xl leading-tight">
-            {{ __('PLO Report for '.$semester_name." ".$subject_name) }}
+            {{ __('PLO Scores For '.$semester_name." ".$subject_name) }}
         </h2>
     </x-slot>
 
@@ -16,13 +16,58 @@
             <div class="flex flex-col">
                 <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="inline-block py-2 min-w-full sm:px-6 lg:px-8">
+                        <div id="chart" style="height: 300px"></div>
                         <div class="overflow-hidden shadow-md sm:rounded-lg">
                             <table class="min-w-full">
                                 <thead class="bg-gray-100 dark:bg-gray-700">
                                     <tr>
                                         <th colspan='2' scope="col"
                                             class="text-center py-3 px-6 text-sm font-medium tracking-wider text-gray-700 uppercase dark:text-gray-400">
-                                            Priority levels
+                                            BT level
+                                        </th>
+                                        <th scope="col"
+                                            class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                            {{$bt1}}
+                                        </th>
+                                        <th scope="col"
+                                            class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                            {{$bt2}}
+                                        </th>
+                                        <th scope="col"
+                                            class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                            {{$bt3}}
+                                        </th>
+                                        <th scope="col"
+                                            class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                            {{$bt4}}
+                                        </th>
+                                    </tr>
+                                    <tr class="bg-white">
+                                        <th colspan='2' scope="col"
+                                            class="text-center py-3 px-6 text-sm font-medium tracking-wider text-gray-700 uppercase dark:text-gray-400">
+                                            KPI%
+                                        </th>
+                                        <th scope="col"
+                                            class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                            50%
+                                        </th>
+                                        <th scope="col"
+                                            class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                            50%
+                                        </th>
+                                        <th scope="col"
+                                            class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                            50%
+                                        </th>
+                                        <th scope="col"
+                                            class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                            50%
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan='2' scope="col"
+                                            class="text-center py-3 px-6 text-sm font-medium tracking-wider text-gray-700 uppercase dark:text-gray-400">
+                                            Emphasis level
                                         </th>
                                         <th scope="col"
                                             class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
@@ -41,6 +86,7 @@
                                             {{$plevel4}}
                                         </th>
                                     </tr>
+                                    
                                     <tr class='bg-white'>
                                         <th scope="col"
                                             class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
@@ -119,13 +165,30 @@
             </button>
         </a>
 
-        {{-- <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none ' href=""> --}}
-            <button type='button' id="fab"
-                class="text-white cursor-pointer fixed bottom-5 right-4 p-0 w-32 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
-                Graphs
-            </button>
-            {{-- </a> --}}
-
+        {{-- <button type='button' id="fab"
+            class="text-white cursor-pointer fixed bottom-5 right-4 p-0 w-40 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
+            Download Report
+        </button> --}}
         <br><br><br>
 
+
 </x-app-layout>
+
+<!-- Charting library -->
+<script src="https://unpkg.com/chart.js@^2.9.3/dist/Chart.min.js"></script>
+<!-- Chartisan -->
+<script src="https://unpkg.com/@chartisan/chartjs@^2.1.0/dist/chartisan_chartjs.umd.js"></script>
+
+<script>
+    const chart = new Chartisan({
+        el: '#chart',
+        url: "@chart('plo_attainment_chart')",
+        hooks: new ChartisanHooks()
+        .title('PLO Attainment Graph')
+        .colors(['#EF4444','#14B8A6'])
+        .borderColors(['#EF4444','#14B8A6'])
+        .beginAtZero()
+        .responsive(true)
+        .datasets([{ type: 'line', fill: false }, 'bar']),
+      });
+</script>

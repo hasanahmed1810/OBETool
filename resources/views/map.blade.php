@@ -6,7 +6,7 @@
     </x-slot>
 
     <form class='flex justify-center items-center py-10' id='form' method="post" action='/report/{{$sem_id}}/{{$id}}'>
-        <div class="w-full max-w-xs flex flex-col bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 mr-16">
+        <div class="w-full max-w-xs flex flex-col bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 mr-4">
             @csrf
             <label for="clo1">Map CLO 1 To</label>
             <br>
@@ -84,9 +84,9 @@
                 <option value="PLO 12">PLO 12</option>
             </select>
         </div>
-        <div class="w-full max-w-xs flex flex-col bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
+        <div class="w-full max-w-xs flex flex-col bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 mr-4">
             @csrf
-            <label for="plvl1">CLO 1 Priority Level</label>
+            <label for="plvl1">PLO Emphasis Level</label>
             <br>
             <select
                 class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
@@ -96,7 +96,7 @@
                 <option value="HIGH">HIGH</option>
             </select>
             <br>
-            <label for="plvl2">CLO 2 Priority Level</label>
+            <label for="plvl2">PLO Emphasis Level</label>
             <br>
             <select
                 class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
@@ -106,7 +106,7 @@
                 <option value="HIGH">HIGH</option>
             </select>
             <br>
-            <label for="plvl3">CLO 3 Priority Level</label>
+            <label for="plvl3">PLO Emphasis Level</label>
             <br>
             <select
                 class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
@@ -116,7 +116,7 @@
                 <option value="HIGH">HIGH</option>
             </select>
             <br>
-            <label for="plvl4">CLO 4 Priority Level</label>
+            <label for="plvl4">PLO Emphasis Level</label>
             <br>
             <select
                 class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
@@ -126,12 +126,116 @@
                 <option value="HIGH">HIGH</option>
             </select>
         </div>
+        <div class="w-full max-w-xs flex flex-col bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
+            @csrf
+            <label for="bt1">PLO BT Level</label>
+            <br>
+            <select
+                class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
+                name="bt1" id="bt1">
+                <option value="C-1">C-1</option>
+                <option value="C-2">C-2</option>
+                <option value="C-3">C-3</option>
+                <option value="C-4">C-4</option>
+                <option value="C-5">C-5</option>
+                <option value="C-6">C-6</option>
+                <option value="P-1">P-1</option>
+                <option value="P-2">P-2</option>
+                <option value="P-3">P-3</option>
+                <option value="P-4">P-4</option>
+                <option value="P-5">P-5</option>
+                <option value="P-6">P-6</option>
+                <option value="P-7">P-7</option>
+                <option value="A-1">A-1</option>
+                <option value="A-2">A-2</option>
+                <option value="A-3">A-3</option>
+                <option value="A-4">A-4</option>
+                <option value="A-5">A-5</option>
+            </select>
+            <br>
+            <label for="bt2">PLO BT Level</label>
+            <br>
+            <select
+                class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
+                name="bt2" id="bt2">
+                <option value="C-1">C-1</option>
+                <option value="C-2">C-2</option>
+                <option value="C-3">C-3</option>
+                <option value="C-4">C-4</option>
+                <option value="C-5">C-5</option>
+                <option value="C-6">C-6</option>
+                <option value="P-1">P-1</option>
+                <option value="P-2">P-2</option>
+                <option value="P-3">P-3</option>
+                <option value="P-4">P-4</option>
+                <option value="P-5">P-5</option>
+                <option value="P-6">P-6</option>
+                <option value="P-7">P-7</option>
+                <option value="A-1">A-1</option>
+                <option value="A-2">A-2</option>
+                <option value="A-3">A-3</option>
+                <option value="A-4">A-4</option>
+                <option value="A-5">A-5</option>
+            </select>
+            <br>
+            <label for="bt3">PLO BT Level</label>
+            <br>
+            <select
+                class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
+                name="bt3" id="bt3">
+                <option value="C-1">C-1</option>
+                <option value="C-2">C-2</option>
+                <option value="C-3">C-3</option>
+                <option value="C-4">C-4</option>
+                <option value="C-5">C-5</option>
+                <option value="C-6">C-6</option>
+                <option value="P-1">P-1</option>
+                <option value="P-2">P-2</option>
+                <option value="P-3">P-3</option>
+                <option value="P-4">P-4</option>
+                <option value="P-5">P-5</option>
+                <option value="P-6">P-6</option>
+                <option value="P-7">P-7</option>
+                <option value="A-1">A-1</option>
+                <option value="A-2">A-2</option>
+                <option value="A-3">A-3</option>
+                <option value="A-4">A-4</option>
+                <option value="A-5">A-5</option>
+            </select>
+            <br>
+            <label for="bt4">PLO BT Level</label>
+            <br>
+            <select
+                class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
+                name="bt4" id="bt4">
+                <option value="C-1">C-1</option>
+                <option value="C-2">C-2</option>
+                <option value="C-3">C-3</option>
+                <option value="C-4">C-4</option>
+                <option value="C-5">C-5</option>
+                <option value="C-6">C-6</option>
+                <option value="P-1">P-1</option>
+                <option value="P-2">P-2</option>
+                <option value="P-3">P-3</option>
+                <option value="P-4">P-4</option>
+                <option value="P-5">P-5</option>
+                <option value="P-6">P-6</option>
+                <option value="P-7">P-7</option>
+                <option value="A-1">A-1</option>
+                <option value="A-2">A-2</option>
+                <option value="A-3">A-3</option>
+                <option value="A-4">A-4</option>
+                <option value="A-5">A-5</option>
+            </select>
+        </div>
 
         <button type='submit'
             class="text-white cursor-pointer fixed bottom-5 right-4 p-0 w-32 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
             PLO Report
         </button>
     </form>
+
+    <br>
 
     <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none '
         href="/data/{{$sem_id}}/{{$id}}">
