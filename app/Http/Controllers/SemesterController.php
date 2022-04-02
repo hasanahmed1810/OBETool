@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Semester;
 use App\Models\Subject;
 use App\Models\Student;
-use Illuminate\Support\Facades\Auth;
 
 class SemesterController extends Controller
 {
@@ -17,8 +16,7 @@ class SemesterController extends Controller
      */
     public function index()
     {
-        // dd(Auth::user()->id);
-        $semesters = Semester::where('user_id','=',Auth::user()->id)->get();
+        $semesters = Semester::all();
         return view('dashboard', ["semesters" => $semesters]);
     }
 
@@ -42,7 +40,6 @@ class SemesterController extends Controller
     {
         $semester = new Semester;
         $semester->name = $request->name;
-        $semester->user_id = Auth::user()->id;
         $semester->save();
         return redirect('/');
     }
