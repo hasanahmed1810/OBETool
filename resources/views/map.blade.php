@@ -10,7 +10,7 @@
             @csrf
             <label for="clo1">Map CLO 1 To</label>
             <br>
-            <select
+            <select onchange="updateLabels1()"
                 class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
                 name="clo1" id="clo1">
                 <option value="PLO 1">PLO 1</option>
@@ -29,7 +29,7 @@
             <br>
             <label for="clo2">Map CLO 2 To</label>
             <br>
-            <select
+            <select onchange="updateLabels2()"
                 class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
                 name="clo2" id="clo2">
                 <option value="PLO 1">PLO 1</option>
@@ -48,7 +48,7 @@
             <br>
             <label for="clo3">Map CLO 3 To</label>
             <br>
-            <select
+            <select onchange="updateLabels3()"
                 class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
                 name="clo3" id="clo3">
                 <option value="PLO 1">PLO 1</option>
@@ -67,7 +67,7 @@
             <br>
             <label for="clo4">Map CLO 4 To</label>
             <br>
-            <select
+            <select onchange="updateLabels4()"
                 class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
                 name="clo4" id="clo4">
                 <option value="PLO 1">PLO 1</option>
@@ -86,7 +86,7 @@
         </div>
         <div class="w-full max-w-xs flex flex-col bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 mr-4">
             @csrf
-            <label for="plvl1">PLO Emphasis Level</label>
+            <label id="label1" for="plvl1">PLO 1 Emphasis Level</label>
             <br>
             <select
                 class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
@@ -96,7 +96,7 @@
                 <option value="HIGH">HIGH</option>
             </select>
             <br>
-            <label for="plvl2">PLO Emphasis Level</label>
+            <label id='label2' for="plvl2">PLO 1 Emphasis Level</label>
             <br>
             <select
                 class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
@@ -106,7 +106,7 @@
                 <option value="HIGH">HIGH</option>
             </select>
             <br>
-            <label for="plvl3">PLO Emphasis Level</label>
+            <label id='label3' for="plvl3">PLO 1 Emphasis Level</label>
             <br>
             <select
                 class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
@@ -116,7 +116,7 @@
                 <option value="HIGH">HIGH</option>
             </select>
             <br>
-            <label for="plvl4">PLO Emphasis Level</label>
+            <label id='label4' for="plvl4">PLO 1 Emphasis Level</label>
             <br>
             <select
                 class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
@@ -128,7 +128,7 @@
         </div>
         <div class="w-full max-w-xs flex flex-col bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
             @csrf
-            <label for="bt1">PLO BT Level</label>
+            <label id='label11' for="bt1">PLO 1 BT Level</label>
             <br>
             <select
                 class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
@@ -153,7 +153,7 @@
                 <option value="A-5">A-5</option>
             </select>
             <br>
-            <label for="bt2">PLO BT Level</label>
+            <label id='label22' for="bt2">PLO 1 BT Level</label>
             <br>
             <select
                 class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
@@ -178,7 +178,7 @@
                 <option value="A-5">A-5</option>
             </select>
             <br>
-            <label for="bt3">PLO BT Level</label>
+            <label id='label33' for="bt3">PLO 1 BT Level</label>
             <br>
             <select
                 class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
@@ -203,7 +203,7 @@
                 <option value="A-5">A-5</option>
             </select>
             <br>
-            <label for="bt4">PLO BT Level</label>
+            <label id='label44' for="bt4">PLO 1 BT Level</label>
             <br>
             <select
                 class='transition ease-in-out appearance-none rounded-lg text-teal-500 border-0 focus:outline-none outline-none'
@@ -245,3 +245,22 @@
         </button>
     </a>
 </x-app-layout>
+
+<script>
+    function updateLabels1(){
+        document.querySelector('#label1').innerHTML = document.querySelector('#clo1').value + ' Emphasis Level';
+        document.querySelector('#label11').innerHTML = document.querySelector('#clo1').value + ' BT Level';
+    }
+    function updateLabels2(){
+        document.querySelector('#label2').innerHTML = document.querySelector('#clo2').value + ' Emphasis Level';
+        document.querySelector('#label22').innerHTML = document.querySelector('#clo2').value + ' BT Level';
+    }
+    function updateLabels3(){
+        document.querySelector('#label3').innerHTML = document.querySelector('#clo3').value + ' Emphasis Level';
+        document.querySelector('#label33').innerHTML = document.querySelector('#clo3').value + ' BT Level';
+    }
+    function updateLabels4(){
+        document.querySelector('#label4').innerHTML = document.querySelector('#clo4').value + ' Emphasis Level';
+        document.querySelector('#label44').innerHTML = document.querySelector('#clo4').value + ' BT Level';
+    }
+</script>
