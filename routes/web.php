@@ -51,4 +51,6 @@ Route::get('/delete-student/{id}', [DataController::class, 'destroy']);
 
 Route::get('/download-template', [UploadController::class, 'download']);
 
+Route::get('/download-data', [ReportController::class, 'download']);
+
 require __DIR__.'/auth.php';

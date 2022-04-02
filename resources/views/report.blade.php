@@ -16,7 +16,7 @@
             <div class="flex flex-col">
                 <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="inline-block py-2 min-w-full sm:px-6 lg:px-8">
-                        <div id="chart" style="height: 300px"></div>
+                        <div id="chart2" style="height: 300px"></div>
                         <div class="overflow-hidden shadow-md sm:rounded-lg">
                             <table class="min-w-full">
                                 <thead class="bg-gray-100 dark:bg-gray-700">
@@ -86,7 +86,7 @@
                                             {{$plevel4}}
                                         </th>
                                     </tr>
-                                    
+
                                     <tr class='bg-white'>
                                         <th scope="col"
                                             class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
@@ -157,18 +157,20 @@
         @endif
 
 
-        <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none '
-            href="/map-plos/{{$sem_id}}/{{$id}}">
-            <button id="fab"
+        <a href="/map-plos/{{$sem_id}}/{{$id}}">
+            <button
                 class="text-white content-center cursor-pointer fixed bottom-5 left-4 p-0 w-32 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
                 Go Back
             </button>
         </a>
 
-        {{-- <button type='button' id="fab"
-            class="text-white cursor-pointer fixed bottom-5 right-4 p-0 w-40 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
-            Download Report
-        </button> --}}
+        <a href="/download-data">
+            <button type='button'
+                class="text-white cursor-pointer fixed bottom-5 right-4 p-0 w-44 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
+                Download Data
+            </button>
+        </a>
+
         <br><br><br>
 
 
@@ -181,7 +183,7 @@
 
 <script>
     const chart = new Chartisan({
-        el: '#chart',
+        el: '#chart2',
         url: "@chart('plo_attainment_chart')",
         hooks: new ChartisanHooks()
         .title('PLO Attainment Graph')

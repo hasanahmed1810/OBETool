@@ -641,14 +641,14 @@ select {
 .left-4 {
   left: 1rem;
 }
+.right-4 {
+  right: 1rem;
+}
 .right-20 {
   right: 5rem;
 }
 .right-5 {
   right: 1.25rem;
-}
-.right-4 {
-  right: 1rem;
 }
 .left-0 {
   left: 0px;
@@ -789,6 +789,9 @@ select {
 .w-32 {
   width: 8rem;
 }
+.w-40 {
+  width: 10rem;
+}
 .w-auto {
   width: auto;
 }
@@ -816,8 +819,11 @@ select {
 .w-48 {
   width: 12rem;
 }
-.w-40 {
-  width: 10rem;
+.w-36 {
+  width: 9rem;
+}
+.w-44 {
+  width: 11rem;
 }
 .min-w-full {
   min-width: 100%;

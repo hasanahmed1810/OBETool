@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\Subject;
 use App\Models\Semester;
+use Illuminate\Support\Facades\Session;
 
 
 class DataController extends Controller
@@ -15,6 +16,7 @@ class DataController extends Controller
         $semester_name = Semester::find($sem_id)->name;
         $subject_name = Subject::find($id)->name;
         $students = Student::where('subject_id', $id)->get();
+        Session::put('subject_id_for_clo', $id);
         return view('data', ['id' => $id, 'sem_id' => $sem_id, 'students' => $students, 'subject_name' => $subject_name, 'semester_name' => $semester_name]);
     }
 
