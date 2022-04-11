@@ -31,7 +31,7 @@ Route::get('/data/{sem_id}/{id}', [DataController::class, 'index']);
 
 Route::post('/report/{sem_id}/{id}', [ReportController::class, 'index']);
 
-Route::group(['prefix' => 'editor'], function () {
+Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 

@@ -15,8 +15,8 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link href="/editor" >
-                        {{ __('Editor') }}
+                    <x-nav-link href="/admin" >
+                        {{ __('Admin Panel') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -69,8 +69,8 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="/editor" >
-                {{ __('Editor') }}
+            <x-responsive-nav-link href="/admin" >
+                {{ __('Admin Panel') }}
             </x-responsive-nav-link>
         </div>
 
