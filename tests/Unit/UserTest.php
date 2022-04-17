@@ -85,5 +85,6 @@ class UserTest extends TestCase
         $this->assertTrue(in_array('remember_token' , $this->getUser()->getHidden()));
     }
 
-}
 
+
+}

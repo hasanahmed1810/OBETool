@@ -2,7 +2,6 @@
 
 namespace Tests\Unit;
 // View\Components
-
 use App\View\Components\GuestLayout;
 use Tests\TestCase;
 
