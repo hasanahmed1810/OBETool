@@ -41,4 +41,17 @@ class User extends \TCG\Voyager\Models\User
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getFillable(){
+        return $this->fillable;
+    }
+
+    public function getHidden(){
+        return $this->hidden;
+    }
+
+    public function getCasts(){
+        return $this->casts;
+    }
+    
 }
