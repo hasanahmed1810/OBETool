@@ -31,6 +31,10 @@ class ReportController extends Controller
         $bt2 = $request->bt2;
         $bt3 = $request->bt3;
         $bt4 = $request->bt4;
+        $weightage1 = $request->weightage1;
+        $weightage2 = $request->weightage2;
+        $weightage3 = $request->weightage3;
+        $weightage4 = $request->weightage4;
 
         Session::put('subject_id', $id);
         Session::put('sem_id', $sem_id);
@@ -49,8 +53,12 @@ class ReportController extends Controller
         Session::put('bt2', $bt2);
         Session::put('bt3', $bt3);
         Session::put('bt4', $bt4);
+        Session::put('weightage1', $weightage1);
+        Session::put('weightage2', $weightage2);
+        Session::put('weightage3', $weightage3);
+        Session::put('weightage4', $weightage4);
 
-        return view('report', ['id' => $id, 'sem_id' => $sem_id, 'students' => $students, 'column1' => $column1, 'column2' => $column2, 'column3' => $column3, 'column4' => $column4, 'semester_name' => $semester_name, 'subject_name' => $subject_name, 'plevel1' => $plevel1, 'plevel2' => $plevel2, 'plevel3' => $plevel3, 'plevel4' => $plevel4, 'bt1' => $bt1, 'bt2' => $bt2, 'bt3' => $bt3, 'bt4' => $bt4]);
+        return view('report', ['id' => $id, 'sem_id' => $sem_id, 'students' => $students, 'column1' => $column1, 'column2' => $column2, 'column3' => $column3, 'column4' => $column4, 'semester_name' => $semester_name, 'subject_name' => $subject_name, 'plevel1' => $plevel1, 'plevel2' => $plevel2, 'plevel3' => $plevel3, 'plevel4' => $plevel4, 'bt1' => $bt1, 'bt2' => $bt2, 'bt3' => $bt3, 'bt4' => $bt4, 'weightage1' => $weightage1, 'weightage2' => $weightage2, 'weightage3' => $weightage3, 'weightage4' => $weightage4]);
     }
 
     public function download() 

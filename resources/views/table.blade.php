@@ -44,7 +44,29 @@
                 50%
             </th>
         </tr>
-        <tr>
+        <tr class="bg-gray-100">
+            <th colspan='2' scope="col"
+                class="text-center py-3 px-6 text-sm font-medium tracking-wider text-gray-700 uppercase dark:text-gray-400">
+                Weightages%
+            </th>
+            <th scope="col"
+                class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                {{$weightage1}}%
+            </th>
+            <th scope="col"
+                class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                {{$weightage2}}%
+            </th>
+            <th scope="col"
+                class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                {{$weightage3}}%
+            </th>
+            <th scope="col"
+                class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                {{$weightage4}}%
+            </th>
+        </tr>
+        <tr class="bg-white">
             <th colspan='2' scope="col"
                 class="text-center py-3 px-6 text-sm font-medium tracking-wider text-gray-700 uppercase dark:text-gray-400">
                 Emphasis level
@@ -67,7 +89,7 @@
             </th>
         </tr>
 
-        <tr class='bg-white'>
+        <tr class='bg-gray-100'>
             <th scope="col"
                 class="py-3 px-6 text-sm font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
                 CMS ID
@@ -97,7 +119,7 @@
     <tbody>
         @foreach ($students as $student)
         <tr
-            class="even:bg-white odd:bg-gray-100 bg-white dark:bg-gray-800 dark:border-gray-700">
+            class="odd:bg-white even:bg-gray-100 bg-white dark:bg-gray-800 dark:border-gray-700">
             <td
                 class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 {{$student['cms_id']}}
