@@ -49,7 +49,7 @@
                         {{ __('Dont have an account?') }}
                     </a>
                 @endif
-                <x-button class="ml-3">
+                <x-button id="login" name='login' class="ml-3">
                     {{ __('Log in') }}
                 </x-button>
             </div>

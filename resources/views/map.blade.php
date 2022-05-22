@@ -328,7 +328,7 @@
             </select>
         </div>
 
-        <button type='button' onclick="submitForm()"
+        <button id='makePLOReport' type='button' onclick="submitForm()"
             class="text-white cursor-pointer fixed bottom-5 right-4 p-0 w-32 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
             PLO Report
         </button>

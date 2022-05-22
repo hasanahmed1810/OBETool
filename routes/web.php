@@ -29,7 +29,9 @@ Route::get('/subjects/{id}', [SubjectController::class, 'index']);
 
 Route::get('/data/{sem_id}/{id}', [DataController::class, 'index']);
 
-Route::post('/report/{sem_id}/{id}', [ReportController::class, 'index']);
+Route::post('/report/{sem_id}/{id}', [ReportController::class, 'post']);
+
+Route::get('/report/{sem_id}/{id}', [ReportController::class, 'get']);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

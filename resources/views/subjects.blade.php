@@ -55,6 +55,7 @@
                 class="transition ease-in-out rounded-md bg-transparent  border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight"
                 type="text" placeholder="Subject" aria-label="Full name">
             <button
+                id='addSubject'
                 class="flex-shrink-0 transition ease-in-out bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 ease in text-sm border-4 text-white py-1 px-10 rounded-md"
                 type="submit">
                 Add
@@ -72,7 +73,7 @@
     </button>
 
     <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none ' href="/">
-        <button id="fab"
+        <button
             class="text-white content-center cursor-pointer fixed bottom-5 left-4 p-0 w-32 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
             Go Back
         </button>

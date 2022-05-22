@@ -55,6 +55,7 @@
                 class="transition ease-in-out rounded-md bg-transparent  border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight"
                 type="text" placeholder="Semester" aria-label="Full name">
             <button
+                id='addSemester'
                 class="flex-shrink-0 transition ease-in-out bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 ease in text-sm border-4 text-white py-1 px-10 rounded-md"
                 type="submit">
                 Add

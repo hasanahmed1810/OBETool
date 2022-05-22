@@ -36,6 +36,7 @@
             </label>
             <div class='flex w-full h-24 items-center justify-center bg-grey-lighter'>
                 <button
+                    id='upload'
                     class='transition ease-in-out delay-15 hover:-translate-y-1 w-64 flex flex-col items-center px-4 py-6 bg-white text-teal-500 rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer'
                     type="submit">UPLOAD</button>
             </div>
@@ -43,14 +44,14 @@
     </form>
 
     <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none ' href="/subjects/{{$sem_id}}">
-        <button id="fab"
+        <button
             class="text-white content-center cursor-pointer fixed bottom-5 left-4 p-0 w-32 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
             Go Back
         </button>
     </a>
 
     <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none ' href="/download-template">
-        <button id="fab"
+        <button
             class="text-white cursor-pointer center-button fixed bottom-5 p-0 w-64 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
             Download Template
         </button>
@@ -58,7 +59,7 @@
 
     <a class=' active:shadow-lg mouse shadow transition duration-200 focus:outline-none '
         href="/data/{{$sem_id}}/{{$id}}">
-        <button id="fab"
+        <button
             class="text-white cursor-pointer fixed bottom-5 right-4 p-0 w-32 h-16 bg-teal-500 rounded-full hover:-translate-y-1 active:shadow-lg mouse shadow transition duration-200 focus:outline-none">
             View Data
         </button>

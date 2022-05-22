@@ -12,7 +12,12 @@ use App\Exports\StudentExport;
 
 class ReportController extends Controller
 {
-    public function index(Request $request, $sem_id, $id)
+    public function get()
+    {
+        return view('report', ['id' => Session::get('subject_id'), 'sem_id' => Session::get('sem_id'), 'students' => Session::get('students'), 'column1' => Session::get('column1'), 'column2' => Session::get('column2'), 'column3' => Session::get('column3'), 'column4' => Session::get('column4'), 'semester_name' => Session::get('semester_name'), 'subject_name' => Session::get('subject_name'), 'plevel1' => Session::get('plevel1'), 'plevel2' => Session::get('plevel2'), 'plevel3' => Session::get('plevel3'), 'plevel4' => Session::get('plevel4'), 'bt1' => Session::get('bt1'), 'bt2' => Session::get('bt2'), 'bt3' => Session::get('bt3'), 'bt4' => Session::get('bt4'), 'weightage1' => Session::get('weightage1'), 'weightage2' => Session::get('weightage2'), 'weightage3' => Session::get('weightage3'), 'weightage4' => Session::get('weightage4')]);
+    }
+
+    public function post(Request $request, $sem_id, $id)
     {
         $id = $id;
         $sem_id = $sem_id;
@@ -61,7 +66,7 @@ class ReportController extends Controller
         return view('report', ['id' => $id, 'sem_id' => $sem_id, 'students' => $students, 'column1' => $column1, 'column2' => $column2, 'column3' => $column3, 'column4' => $column4, 'semester_name' => $semester_name, 'subject_name' => $subject_name, 'plevel1' => $plevel1, 'plevel2' => $plevel2, 'plevel3' => $plevel3, 'plevel4' => $plevel4, 'bt1' => $bt1, 'bt2' => $bt2, 'bt3' => $bt3, 'bt4' => $bt4, 'weightage1' => $weightage1, 'weightage2' => $weightage2, 'weightage3' => $weightage3, 'weightage4' => $weightage4]);
     }
 
-    public function download() 
+    public function download()
     {
         return Excel::download(new StudentExport, 'students.xlsx');
     }
