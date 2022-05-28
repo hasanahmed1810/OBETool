@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    @if($students->count() <= 0) <div class="flex max-w-7xl px-8 py-12">
+    @if(($students == null) || ($students->count() <= 0)) <div class="flex max-w-7xl px-8 py-12">
         <div class="w-full bg-white overflow-hidden shadow-sm rounded-lg">
             <div class="p-6 bg-white border-b border-gray-200">
                 No students added yet
